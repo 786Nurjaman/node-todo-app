@@ -18,9 +18,9 @@ pipeline {
             steps {
                 echo "Pushing the image to docker hub"
                 withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker tag node-todo-app ${env.dockerHubUser}/node-todo-app:01"
+                sh "docker tag node-todo-app ${env.dockerHubUser}/node-todo-app:latest"
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                sh "docker push ${env.dockerHubUser}/node-todo-app:01"
+                sh "docker push ${env.dockerHubUser}/node-todo-app:latest"
                 }
             }
         }
