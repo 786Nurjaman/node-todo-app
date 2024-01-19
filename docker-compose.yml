@@ -1,0 +1,6 @@
+version : "3.3"
+services :
+  web :
+     image : nurjamanshekh/node-todo-app:01
+     ports :
+         - "8000:8000"
